@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exam.name %>
+</p>
+
+<%@questions.each do |question| %>
+<p>
+  <strong>Question:</strong>
+  <%= question.content%>
+</p>
+<p>
+   <strong>Answers</strong>
+ <%question.answers.each do |answer|%>
+  <ul><li><%=answer.content%></li></ul>
+  <%end%>
+  </p>
+<%end%>
+
+<%= will_paginate @exams %>
+
+
+<%= link_to 'Edit', edit_exam_path(@exam) %> |
+<%= link_to 'Back', exams_path %>

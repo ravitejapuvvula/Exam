@@ -1,0 +1,9 @@
+ id | exam_id |                                     content                                      |         created_at         |         updated_at         
+----+---------+----------------------------------------------------------------------------------+----------------------------+----------------------------
+  2 |       2 | Grand Central Terminal, Park Avenue, New York is the world's                     | 2015-06-01 09:16:01.019453 | 2015-06-01 09:16:01.019453
+  3 |       2 | Entomology is the science that studies                                           | 2015-06-01 09:16:01.026469 | 2015-06-01 09:16:01.026469
+  4 |       2 | Eritrea, which became the 182nd member of the UN in 1993, is in the continent of | 2015-06-01 09:16:01.0344   | 2015-06-01 09:16:01.0344
+  5 |       2 | Garampani sanctuary is located at                                                | 2015-06-01 09:16:01.043738 | 2015-06-01 09:16:01.043738
+  6 |       2 | Hitler party which came into power in 1933 is known as                           | 2015-06-01 09:16:01.051598 | 2015-06-01 09:16:01.051598
+(5 rows)
+
