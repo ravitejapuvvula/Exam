@@ -1,4 +1,5 @@
 class ExamsController < ApplicationController
+  before_action :check_permission
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
 
   # GET /exams
@@ -76,7 +77,7 @@ class ExamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:name, questions_attributes: [:content, answers_attributes: [:content]])
+      params.require(:exam).permit(:name, questions_attributes: [:content, :correct_answer, answers_attributes: [:content]])
     end
 
 end

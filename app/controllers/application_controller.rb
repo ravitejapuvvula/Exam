@@ -4,4 +4,11 @@ class ApplicationController < ActionController::Base
     
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+
+  private
+  def check_permission
+    if user_signed_in?
+      current_user.role == "Admin"
+    end
+  end
 end

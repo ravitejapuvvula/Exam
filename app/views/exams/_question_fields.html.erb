@@ -3,10 +3,13 @@
   <%= f.label :content, "Question" %><br />
   <%= f.text_area :content, :rows => 3, :coulumns => 10%><br />
   <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove Question" %>
+  <%= f.label :_destroy, "Remove Question" %><br/>
+  <%= f.label :correct_answer, "Correct" %>
+  <%= f.text_field :correct_answer %>
 </p>
 <%= f.fields_for :answers do |builder| %>
   <%= render 'answer_fields', :f => builder %>
+
 <% end %>
 
 
