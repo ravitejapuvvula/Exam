@@ -2,5 +2,11 @@
 <h1>Enter to Write Exam</h1>
 <br/>
 <br/>
+<% if current_user.role=="Admin"%>
+
 <%= link_to 'Enter the exam', controller: 'exams' %>
+
+<%else%>
+<%= link_to 'Enter the exam', student_exams_path %>
+<%end%>
 

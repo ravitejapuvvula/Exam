@@ -8,7 +8,10 @@ class ApplicationController < ActionController::Base
   private
   def check_permission
     if user_signed_in?
+      
       current_user.role == "Admin"
+      	
+     
     end
   end
 end

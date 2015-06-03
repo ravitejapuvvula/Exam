@@ -23,7 +23,8 @@ class ExamsController < ApplicationController
       4.times { question.answers.build }
       end
   end
-
+  def student
+  end
   # GET /exams/1/edit
   def edit
   end
