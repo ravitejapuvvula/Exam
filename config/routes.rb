@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :exams do 
     collection do
       get "student"
+      post 'exams/new' => 'exams#new'
+      get '/exams/:id' => 'exams#show'
+get '/exams/student' =>	'exams#student'
     end
   end
 
@@ -11,6 +14,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+ 
   
 
 

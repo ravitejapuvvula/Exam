@@ -12,7 +12,7 @@ class ExamsController < ApplicationController
   # GET /exams/1.json
   def show
    @questions = Question.where(:exam_id => params[:id])
-                    @exams=Exam.paginate(:page => params[:page], :per_page => 7)
+         
   end
 
   # GET /exams/new
@@ -24,6 +24,8 @@ class ExamsController < ApplicationController
       end
   end
   def student
+      @exam=Exam.first
+      
   end
   # GET /exams/1/edit
   def edit

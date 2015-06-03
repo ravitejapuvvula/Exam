@@ -18,6 +18,6 @@
   <%end%>
   </p>
  
-<%= button_to "New", student_exams_path %><br/>
+<%= button_to "New", new_exam_path %><br/>
 <input type="button" name="b1" value="prev" onclick="location.question.href='2'"><br/><br/>
 <input type="button" name="b1" value="next" onclick="location.href='next_pares.html'">
