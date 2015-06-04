@@ -25,12 +25,27 @@ class ExamsController < ApplicationController
   end
  #for students 
   def student
-      @exam=Exam.first     
+ 
+      @exam.each do |d|
+    byebug 
+        d.Exam
+       end
   end
-#for marks
-  def marks
 
- end
+#for marks
+
+
+  def marks
+   if params[:exam]
+     @marks = []
+     params[:exam].each do |x|
+       @marks << 1 if Question.find(x[0]).correct_answer == Answer.find(x[1]["answer_id"]).content   
+     end
+     @marks = @marks.inject(:+)
+   end
+  end
+
+
   # GET /exams/1/edit
   def edit
   end

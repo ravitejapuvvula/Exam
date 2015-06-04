@@ -14,9 +14,8 @@
   <strong>Answers</strong><br/>
   <% question.answers.each do |answer|%>
     
-<%#= check_box_tag "answer[question_id][]", question.id, @exam.questions.include?(answer) %>
+    <%= radio_button_tag "exam[#{question.id}][answer_id]]", "#{answer.id}" %>
 
-    <%= radio_button_tag "exam[#{question.id}][answer_id]", "#{answer.id}" %>
     <%= answer.content%><br/>
   <%end%>
 </p>

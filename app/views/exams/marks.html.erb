@@ -1,2 +1,9 @@
-"hai"
-<%= params.inspect %>
+
+
+<h1>Your Marks: </h1>
+<%if @marks.nil? %>
+0
+<%else%>
+<%= @marks %>
+<%end%>
+
