@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   resources :exams do 
     collection do
       get "student"
-      post 'exams/new' => 'exams#new'
-      get '/exams/:id' => 'exams#show'
-get '/exams/student' =>	'exams#student'
+       get "marks"
     end
   end
 

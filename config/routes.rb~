@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get "student"
       post 'exams/new' => 'exams#new'
       get '/exams/:id' => 'exams#show'
+get '/exams/student' =>	'exams#student'
     end
   end
 
