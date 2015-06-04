@@ -1,3 +1,4 @@
+<form>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,19 +6,30 @@
   <%= @exam.name %>
 </p>
 
-<%question=@exam.questions.first %>
+<%@exam.questions.each do |question| %>
 <p>
   <strong>Question:</strong>
   <%= question.content%>
 </p>
 <p>
-   <strong>Answers</strong><br/>
+ <%i=1%>
+  <strong>Answers</strong><br/>
+
  <%question.answers.each do |answer|%>
-<input  type="checkbox" id="post_validated" name="post[validated]" value="1" />
- <%=answer.content%><br/>
+
+<input class="Checkbox" type="checkbox" value="<%=i%>" name="examId[value]">
+<%i=i+1%>
+
+<script>
+  var checkedvalue = $('.Checkbox:checked').value();
+</script>
+
+  <%=answer.content%><br/>
+
   <%end%>
   </p>
- 
-<%= button_to "New", student_exams_path %><br/>
-<input type="button" name="b1" value="prev" onclick="location.question.href='2'"><br/><br/>
-<input type="button" name="b1" value="next" onclick="location.href='next_pares.html'">
+<%end%><br/>
+
+<input type="submit" name="b1" value="Submit" onclick="location.href='next_pares.html'">
+
+</form>

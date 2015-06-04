@@ -25,6 +25,7 @@ class ExamsController < ApplicationController
   end
   def student
       @exam=Exam.first
+   
       
   end
   # GET /exams/1/edit
