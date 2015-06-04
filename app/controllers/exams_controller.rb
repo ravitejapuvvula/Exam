@@ -29,6 +29,7 @@ class ExamsController < ApplicationController
   end
 #for marks
   def marks
+
  end
   # GET /exams/1/edit
   def edit

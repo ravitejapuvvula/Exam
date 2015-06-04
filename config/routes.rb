@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :exams do 
     collection do
-      get "student"
+       get "student"
+       post "marks"
        get "marks"
     end
   end

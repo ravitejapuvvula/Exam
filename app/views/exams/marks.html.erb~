@@ -1,1 +1,2 @@
-"This is not your marks you foool"
+"hai"
+<% params.inspect %>

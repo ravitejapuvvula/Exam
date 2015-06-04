@@ -1,6 +1,4 @@
-<form>
-<p id="notice"><%= notice %></p>
-
+<%= form_tag("/exams/marks", method: :post) do %>
 <p>
   <strong>Name:</strong>
   <%= @exam.name %>
@@ -10,26 +8,22 @@
 <p>
   <strong>Question:</strong>
   <%= question.content%>
+
 </p>
 <p>
- <%i=1%>
   <strong>Answers</strong><br/>
+  <% question.answers.each do |answer|%>
+    
+<%#= check_box_tag "answer[question_id][]", question.id, @exam.questions.include?(answer) %>
 
- <%question.answers.each do |answer|%>
-
-<input class="Checkbox" type="checkbox" value="<%=i%>" name="examId[value]">
-<%i=i+1%>
-
-<script>
-  var checkedvalue = $('.Checkbox:checked').value();
-</script>
-
-  <%=answer.content%><br/>
-
+    <%= radio_button_tag "exam[#{question.id}][answer_id]", "#{answer.id}" %>
+    <%= answer.content%><br/>
   <%end%>
-  </p>
-<%end%><br/>
+</p>
+<%end%>
+<%= submit_tag "submit"%>
+<%end%>
 
-<input type="submit" name="b1" value="Submit" onclick="location.href='next_pares.html'">
 
-</form>
+
+

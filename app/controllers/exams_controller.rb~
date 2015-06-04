@@ -23,11 +23,14 @@ class ExamsController < ApplicationController
       4.times { question.answers.build }
       end
   end
+ #for students 
   def student
-      @exam=Exam.first
-   
-      
+      @exam=Exam.first     
   end
+#for marks
+  def marks
+byebug
+ end
   # GET /exams/1/edit
   def edit
   end
