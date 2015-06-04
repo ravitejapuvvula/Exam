@@ -1,0 +1,13 @@
+<%question=@exam.questions.first %>
+<p>
+  <strong>Question:</strong>
+  <%= question.content%>
+</p>
+<p>
+   <strong>Answers</strong><br/>
+ <%question.answers.each do |answer|%>
+<input  type="checkbox" id="post_validated" name="post[validated]" value="1" />
+ <%=answer.content%><br/>
+  <%end%>
+  </p>
+ 

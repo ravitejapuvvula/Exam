@@ -23,13 +23,13 @@ class ExamsController < ApplicationController
       4.times { question.answers.build }
       end
   end
+
  #for students 
+
   def student
- 
-      @exam.each do |d|
-    byebug 
-        d.Exam
-       end
+      @exam = Exam.first
+      @exam= Exam.second
+      
   end
 
 #for marks
