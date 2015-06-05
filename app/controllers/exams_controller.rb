@@ -27,9 +27,7 @@ class ExamsController < ApplicationController
  #for students 
 
   def student
-      @exam = Exam.first
-      @exam= Exam.second
-      
+     @exam = Exam.all.paginate(:page => params[:page], :per_page => 1)
   end
 
 #for marks
@@ -39,11 +37,11 @@ class ExamsController < ApplicationController
    if params[:exam]
      @marks = []
      params[:exam].each do |x|
-       @marks << 1 if Question.find(x[0]).correct_answer == Answer.find(x[1]["answer_id"]).content   
+       @marks << 1 if Question.find(x[0]).correct_answer == Answer.find(x[1]["answer_id"]).content
      end
      @marks = @marks.inject(:+)
    end
-  end
+    end
 
 
   # GET /exams/1/edit
