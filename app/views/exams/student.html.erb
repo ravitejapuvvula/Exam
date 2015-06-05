@@ -1,6 +1,8 @@
 
 <%= form_tag("/exams/marks", method: :post) do %>
- <%@exam.each do |exam|%>
+
+
+    <%@exam.each do |exam|%>
 <p>
   <strong>Name:</strong>
   <%= exam.name %>
@@ -25,11 +27,11 @@
 </p>
 <%end%>
 <%end%>
-    <%= paginate @exam %>
-    <%= submit_tag "submit"%>
+    <%= will_paginate @exam %>
+
+    <%= js_will_paginate @exam %>
+        <%= submit_tag "submit"%>
+
 <%end%>
-
-
-
 
 

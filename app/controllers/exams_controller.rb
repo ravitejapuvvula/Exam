@@ -27,7 +27,7 @@ class ExamsController < ApplicationController
  #for students 
 
   def student
-     @exam = Exam.all.paginate(:page => params[:page], :per_page => 1)
+     @exam = Exam.all.paginate( :page => params[:page], :per_page => 1)
   end
 
 #for marks
