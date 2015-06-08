@@ -2,7 +2,8 @@
 <%= form_tag("/exams/marks", method: :post) do %>
 
 
-    <%@exam.each do |exam|%>
+  <%@exam.each do |exam|%>
+
 <p>
   <strong>Name:</strong>
   <%= exam.name %>
@@ -15,22 +16,24 @@
   <%= question.content%>
       <%i=i+1%>
 </p>
+
 <p>
   <strong>Answers</strong><br/>
 
   <% question.answers.each do |answer|%>
-    
+ 
     <%= radio_button_tag "exam[#{question.id}][answer_id]]", "#{answer.id}" %>
+    <%= answer.content%><br/>	
 
-    <%= answer.content%><br/>
   <%end%>
 </p>
 <%end%>
-<%end%>
-    <%= will_paginate @exam %>
 
-    <%= js_will_paginate @exam %>
+    <%= will_paginate @exam %><br/>
+
         <%= submit_tag "submit"%>
+<%end%>
+
 
 <%end%>
 

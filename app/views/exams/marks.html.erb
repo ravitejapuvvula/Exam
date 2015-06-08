@@ -1,15 +1,55 @@
+<body background="http://www.hdwallpapers-3d.com/wp-content/uploads/2014/06/exam-quotes-hd-wallpaper-9.jpg">
+<h1> Your Marks: </h1><br/><br/>
 
-
-<h1>Your Marks: </h1><br/><br/>
-
-<%if @marks.nil? %>
+<% if @marks.nil? %>
 0
 <%else%>
 
-    <strong><%= @marks %></strong><br/>
-
+  <strong><%= @marks %></strong><br/>
 <%end%>
 
+<li id="exam">
+<a  href="./student?page=2" onclick="this.style.display='none';">Science</a><br/>
+ </li>
+
+<li id="exam1">
+<a  href="./student?page=3" onclick="this.style.display='none';">Electronics</a><br/>
+ </li>
+<li id="exam2">
+<a  href="./student?page=4" onclick="this.style.display='none';">General Knowledge</a>
+ </li>
 
 
+<style>
+#exam{
+  
+  font-family:  sans-serif;
+  font-size:150%;
+  color: #DC143C;
+  }
+#exam1{
+  
+  font-family:  sans-serif;
+  font-size:150%;
+  color: #FFEBCD;
+  }
+#exam2{
+  
+  font-family:  sans-serif;
+  font-size:150%;
+  color: #DEB887;
+  }
+</style>
+
+<script type = "text/javascript" >
+      history.pushState(null,null);
+      window.addEventListener('popstate', function() {
+          history.pushState(null,null); });
+</script>
+
+<script type="text/javascript">
+
+  window.history.forward();
+
+</script>
 
