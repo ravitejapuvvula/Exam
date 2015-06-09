@@ -1,12 +1,24 @@
-<body background="http://www.hdwallpapers-3d.com/wp-content/uploads/2014/06/exam-quotes-hd-wallpaper-9.jpg">
-<h1> Your Marks: </h1><br/><br/>
+<body background="http://emilysquotes.com/wp-content/uploads/2014/02/EmilysQuotes.Com-unknown-life-people-fail-reason-understanding-be-yourself.jpg">
+<h1> Current Marks: </h1><br/><br/>
 
 <% if @marks.nil? %>
 0
 <%else%>
+<li id="exam">
+  <strong><%= @marks %></strong><br/><br/>
+</li>
+<%session[:total_marks] = @marks.to_i+session[:total_marks].to_i%>
 
-  <strong><%= @marks %></strong><br/>
+  <br/>
+
+<h1>Your Total Marks </h1><br/><br/>
+
+ <li id="exam">
+   <strong><%= session[:total_marks]%></strong>
+</li>
+
 <%end%>
+<br/>
 
 <li id="exam">
 <a  href="./student?page=2" onclick="this.style.display='none';">Science</a><br/>
@@ -16,7 +28,7 @@
 <a  href="./student?page=3" onclick="this.style.display='none';">Electronics</a><br/>
  </li>
 <li id="exam2">
-<a  href="./student?page=4" onclick="this.style.display='none';">General Knowledge</a>
+<a  href="./studen?page=4" onclick="this.style.display='none';">General Knowledge</a>
  </li>
 
 

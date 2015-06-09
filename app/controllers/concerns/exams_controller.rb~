@@ -35,7 +35,7 @@ class ExamsController < ApplicationController
 
 
   def marks
- 
+
   @page=params[:page]
    if params[:exam]
      @marks = []
